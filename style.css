@@ -39,6 +39,9 @@ body{
 }
 
 
+.task-detail-card:hover{
+    cursor:move;
+}
 
 
 

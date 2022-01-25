@@ -23,35 +23,44 @@
   <body>
     <div class="container d-flex flex-row justify-content-evenly">
       <div
-        class="assign-task px-5 py-5 mx-3 my-5 col-md-5 d-flex flex-column align-items-center shadow-sm bg-light rounded"
+        class="assign-task px-5 py-5 mx-3 my-5 col-md-5  shadow-sm bg-light rounded"
       >
-        <input type="text" id="new-task" placeholder="Task Name" />
-        <input type="text" id="new-task-desc" placeholder="Description" />
-        <div class="urgency row w-100">
-          
-        </div>
-      <select name="users" id="select-users">
-       
-      </select>
-        <button type="button" class="btn btn-secondary text-uppercase rounded" id="assign-btn" onclick="clickAssignBtn()">
+      <form class="d-flex flex-column align-items-center">
+        <input type="text" id="new-task" placeholder="Task Name" required/>
+        <input type="text" id="new-task-desc" placeholder="Description" required/>
+        <div class="urgency row w-100"></div>
+        <select name="users" id="select-users"></select>
+        <button
+          type="submit"
+          class="btn btn-secondary text-uppercase rounded"
+          id="assign-btn"
+          onclick="clickAssignBtn()"
+        >
           <i class="fa fa-plus mx-2"></i>assign the task
         </button>
+      </form>
       </div>
+
       <div
         class="task-summary px-5 py-5 mx-3 my-5 col-md-5 d-flex flex-column align-items-center shadow-sm bg-light rounded text-uppercase justify-content-center"
-      >
-        
-      </div>
+      ></div>
     </div>
-    <div class="task-area">
-      
-    </div>
-    
+    <div class="task-area"></div>
   </body>
-  <script src="./script.js">
-    
-  </script>
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  <script src="./script.js"></script>
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"
+  ></script>
 </html>

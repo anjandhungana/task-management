@@ -49,7 +49,7 @@ const viewLabels = () => {
       (
         element
       ) => `<div class="urgency-child col d-flex flex-column align-items-center ${element.addClasses}" style = "filter:saturate(${element.saturation}%);"onclick = "clickLabel(${element.id})">
-         <div class="urgency-blob" style="background-color:${element.color}; "></div>
+         <div class="urgency-blob" style="background-color:${element.color}"></div>
          <p style='font-weight:100;'>${element.name}</p>
  </div>`
     )
@@ -98,7 +98,7 @@ const clickAssignBtn = () => {
   viewTaskSummary();
 
   taskArea.innerHTML = userTasks.map(
-    (element) => `<div class="task-detail-card container card w-50">
+    (element) => `<div class="task-detail-card container card w-50" draggable="true">
   <div class="card-body">
     <h4 class="card-title text-uppercase">${element.taskName}</h4>
     <p class="subtitle font-weight-light">${element.taskDesc}</p>
