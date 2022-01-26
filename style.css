@@ -40,15 +40,18 @@ body{
 
 
 .task-detail-card:hover{
-    cursor:move;
+    cursor: default;
 }
 
-
+.urgency-child{
+    filter:saturate(40%);
+}
 
 .urgency-child.active{
     border:1px solid #444;
     background-color: white;
     border-radius: 15px;
+    filter:saturate(100%);
 }
 
 .assign-task input:focus{
@@ -87,7 +90,7 @@ body{
     content:'';
     position:absolute;
     border-radius:10px;
-    width:5px;
+    width:8px;
     height:80%;
     /* background-color:green; */
     left:1%;
@@ -95,11 +98,26 @@ body{
     bottom:0;
     margin:auto;
     z-index:99;
+    cursor:move;
 }
 
-i.checkbox{
+
+
+input.checkbox, i.fa-trash{
     position:absolute;
+    cursor:pointer;
+   
+}
+
+input.checkbox{
     right:5%;
     top:40%;
-    cursor:pointer;
+    width:25px;
+    height:25px;
+}
+
+i.fa-trash{
+    right:15%;
+    top:45%;
+    font-size: 1.3rem;;
 }

@@ -8,7 +8,7 @@ const urgencyChild = document.querySelectorAll(".urgency-child");
 const taskArea = document.querySelector(".task-area");
 const userDropdown = document.getElementById("select-users");
 const taskSummary = document.querySelector(".task-summary");
-const checkbox = document.querySelector("i.checkbox");
+const checkbox = document.querySelector("input.checkbox");
 
 let addClasses = "";
 
@@ -51,7 +51,7 @@ const viewLabels = () => {
     .map(
       (
         element
-      ) => `<div class="urgency-child col d-flex flex-column align-items-center ${element.addClasses}" style = "filter:saturate(${element.saturation}%);"onclick = "clickLabel(${element.id})">
+      ) => `<div class="urgency-child col d-flex flex-column align-items-center ${element.addClasses}" onclick = "clickLabel(${element.id})">
          <div class="urgency-blob" style="background-color:${element.color}"></div>
          <p style='font-weight:100;'>${element.name}</p>
  </div>`
@@ -96,6 +96,9 @@ const clickLabel = (id) => {
   });
 };
 
+let taskStatus = false;
+
+
 const viewTasks = () => {
   taskArea.innerHTML = userTasks.map(
     (
@@ -107,14 +110,13 @@ const viewTasks = () => {
     <span>Assigned to: ${element.taskUser} | Priority: High</span>
   </div>
   <div class='task-detail-card-color' style='background-color:${element.activeBlobColor}'></div>
-  <i class='far fa-square checkbox unchecked' onclick="toggleCheckbox(${element.taskid})"></i>
-</div>`
+  <input type='checkbox' class='checkbox' onclick="toggleCheckbox(${element.taskid})" ${element.taskStatus ? `checked`:''} ></i>
+  <i class = 'fa fa-trash' onclick='deletetask(${element.taskid})'></i>
+  </div>`
   );
 };
 
-let taskStatus = false;
-
-const clickAssignBtn = () => {
+const pushtoUserTasks = () =>{
   const activeBlobColor = document.querySelector(
     ".urgency-child.active .urgency-blob"
   ).style.backgroundColor;
@@ -129,16 +131,25 @@ const clickAssignBtn = () => {
   // console.log(userTasks);
   taskid++;
   viewTaskSummary();
-
-  viewTasks();
   clearTaskForm();
+  viewTasks();
 };
+
+
+
+const clickAssignBtn = () => {
+  pushtoUserTasks();
+}
 
 const clearTaskForm = () => {
   newTask.value = "";
   newDesc.value = "";
-  document.querySelector(".urgency-child.active").classList.remove("active");
+  document.querySelector('div.urgency-child.active').classList.remove('active');
 };
+
+const updateCompletedTasks = () =>{
+  completedTasks = userTasks.filter((value) => (value.taskStatus == true));
+}
 
 const toggleCheckbox = (val) => {
   userTasks.forEach((element) => {
@@ -151,8 +162,17 @@ const toggleCheckbox = (val) => {
       }
     }
   });
-  completedTasks = userTasks.filter((value) => (value.taskStatus == true));
+updateCompletedTasks();
   viewTaskSummary();
-
   console.log(completedTasks);
 };
+
+
+
+const deletetask = (val)=>{
+  userTasks = userTasks.filter((element)=>element.taskid!=val);
+  console.log(userTasks)
+  updateCompletedTasks();
+  viewTaskSummary();
+  viewTasks();
+}
