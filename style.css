@@ -101,4 +101,5 @@ i.checkbox{
     position:absolute;
     right:5%;
     top:40%;
+    cursor:pointer;
 }

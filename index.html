@@ -23,11 +23,11 @@
   <body>
     <div class="container d-flex flex-row justify-content-evenly">
       <div
-        class="assign-task px-5 py-5 mx-3 my-5 col-md-5  shadow-sm bg-light rounded"
+        class="assign-task px-5 py-5 mx-3 my-5 col-md-5 d-flex flex-column align-items-center shadow-sm bg-light rounded"
       >
-      <form class="d-flex flex-column align-items-center">
-        <input type="text" id="new-task" placeholder="Task Name" required/>
-        <input type="text" id="new-task-desc" placeholder="Description" required/>
+     
+        <input type="text" id="new-task" placeholder="Task Name"/>
+        <input type="text" id="new-task-desc" placeholder="Description"/>
         <div class="urgency row w-100"></div>
         <select name="users" id="select-users"></select>
         <button
@@ -38,14 +38,14 @@
         >
           <i class="fa fa-plus mx-2"></i>assign the task
         </button>
-      </form>
+
       </div>
 
       <div
         class="task-summary px-5 py-5 mx-3 my-5 col-md-5 d-flex flex-column align-items-center shadow-sm bg-light rounded text-uppercase justify-content-center"
       ></div>
     </div>
-    <div class="task-area"></div>
+    <div class="task-area d-flex flex-wrap justify-content-evenly"></div>
   </body>
   <script src="./script.js"></script>
   <script
