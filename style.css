@@ -1,71 +1,68 @@
-:root{
-    --very-urgent:#FF7171;
-    --normal: #69CC7E;
-    --optional:#F156FF;
+:root {
+  --very-urgent: #ff7171;
+  --normal: #69cc7e;
+  --optional: #f156ff;
 }
 
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 
-body{
-    border:0;
-    padding-bottom: 40px;
+body {
+  border: 0;
+  padding-bottom: 40px;
 }
 
-
-.assign-task *{
-    margin:10px 0;
+.assign-task * {
+  margin: 10px 0;
 }
 
 .assign-task input {
-    border:none;
-    width:100%;
-    border-bottom:1px solid;
-    background: none;
+  border: none;
+  width: 100%;
+  border-bottom: 1px solid;
+  background: none;
 }
 
-#select-users{
-    background-color: #6c757d;
-    border:none;
-    color:#fff;
-    padding:.375rem .75rem;
-    border-radius:.25rem;
+#select-users {
+  background-color: #6c757d;
+  border: none;
+  color: #fff;
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.25rem;
 }
 
-#select-users:focus, #select-users:active{
-    border:none;
-    outline:none;
+#select-users:focus,
+#select-users:active {
+  border: none;
+  outline: none;
 }
 
-
-.task-detail-card:hover{
-    cursor: default;
+.task-detail-card:hover {
+  cursor: default;
 }
 
-.urgency-child{
-    filter:saturate(40%);
+.urgency-child {
+  filter: saturate(40%);
 }
 
-.urgency-child.active{
-    border:1px solid #444;
-    background-color: white;
-    border-radius: 15px;
-    filter:saturate(100%);
+.urgency-child.active {
+  border: 1px solid #444;
+  background-color: white;
+  border-radius: 15px;
+  filter: saturate(100%);
 }
 
-.assign-task input:focus{
-    outline: none; 
+.assign-task input:focus {
+  outline: none;
 }
 
-.urgency-blob{
-    height:30px;
-    width:30px;
-    border-radius:50%;
-    /* filter: saturate(40%); */
+.urgency-blob {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  /* filter: saturate(40%); */
 }
-
-
 
 /* .very-urgent .urgency-blob{
     background-color: var(--very-urgent);
@@ -80,44 +77,56 @@ body{
     background-color: var(--optional);
 } */
 
-
 /* CARDS */
-.task-detail-card{
-    position:relative;
+.task-detail-card {
+  position: relative;
 }
 
-.task-detail-card-color{
-    content:'';
-    position:absolute;
-    border-radius:10px;
-    width:8px;
-    height:80%;
-    /* background-color:green; */
-    left:1%;
-    top:0;
-    bottom:0;
-    margin:auto;
-    z-index:99;
-    cursor:move;
+.task-detail-card-color {
+  content: "";
+  position: absolute;
+  border-radius: 10px;
+  width: 8px;
+  height: 80%;
+  /* background-color:green; */
+  left: 1%;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 99;
+  cursor: move;
 }
 
-
-
-input.checkbox, i.fa-trash{
-    position:absolute;
-    cursor:pointer;
-   
+input.checkbox,
+i.fa-trash {
+  position: absolute;
+  cursor: pointer;
 }
 
-input.checkbox{
-    right:5%;
-    top:40%;
-    width:25px;
-    height:25px;
+input.checkbox {
+  right: 5%;
+  top: 40%;
+  width: 25px;
+  height: 25px;
 }
 
-i.fa-trash{
-    right:15%;
-    top:45%;
-    font-size: 1.3rem;;
+i.fa-trash {
+  right: 15%;
+  top: 42%;
+  font-size: 1.3rem;
+}
+
+.progressbar-container{
+  width:250px;
+  height:5px;
+  background-color: grey;
+  overflow: hidden;
+  border-radius:5px;
+  margin-bottom: 1rem;
+}
+
+.progressbar{
+  height:100%;
+  background-color: #333;
+  border-radius: 5px;
 }
